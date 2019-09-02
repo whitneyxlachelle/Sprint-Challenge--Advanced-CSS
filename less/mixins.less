@@ -1,1 +1,36 @@
 // Mixins Here
+.space-photos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-mixin (@bg-color, @font-color) {
+  .center;
+  background: @bg-color;
+  color: @font-color;
+  height: 30px;
+  width: 95px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+
+  @media @phone {
+    width: 95%;
+    height: 65px;
+    margin-left: 5px;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    background: @font-color;
+    color: @bg-color;
+  }
+}
